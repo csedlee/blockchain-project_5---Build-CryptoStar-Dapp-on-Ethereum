@@ -5,8 +5,8 @@ ERC-721 Token Name: "CoinStar"
 ERC-721 Token Symbol: "CAD"
 “Token Address” on the Rinkeby Network: "0x81E890Fe413cCaC1C1c01B0DD4A80B925D939BF8"
 ```
-# Truffle & OpenZeppelin version used in the project.
-``bash
+# Truffle & OpenZeppelin version used.
+```bash
 truffle(develop)> version
 Truffle v5.3.8 (core: 5.3.8)
 openzeppelin/contracts@4.1.0
