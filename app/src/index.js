@@ -30,21 +30,42 @@ const App = {
     const status = document.getElementById("status");
     status.innerHTML = message;
   },
-
+ 
+  // function called to show the starOwner 
+  starOwnerFunc: async function() { 
+    const { starOwner } = this.meta.methods; // to be able to use the functions in your Smart Contract use destructuring to get the function to be call 
+    const response = await starOwner().call(); // calling the starOwner property from your Smart Contract. 
+    const owner = document.getElementById("owner"); // Updating Html 
+    owner.innerHTML = response; 
+  }, 
+ 
+  // function called to create star 
   createStar: async function() {
-    const { createStar } = this.meta.methods;
+    	
     const name = document.getElementById("starName").value;
-    const id = document.getElementById("starId").value;
+    const id = document.getElementById("tokenId").value;
+    
+    App.setStatus("Creating a star ...");
+    // to be able to use the functions in your Smart Contract 
+    // use destructuring to get the function to be call
+    const { createStar } = this.meta.methods;    
     await createStar(name, id).send({from: this.account});
-    App.setStatus("New Star Owner is " + this.account + ".");
+    // use call() to ge the new starName.
+    const response = await createStar().call();    
+    //this.setStatus("New Star Owner is " + this.account + ".");
+    //App.setStatus("New Star Owner is " + this.account + ".");
+    App.setStatus("New Star Owner is " + response + ".");
   },
 
   // Implement Task 4 Modify the front end of the DAPP
   lookUp: async function (){
-    let { lookUptokenIdToStarInfo } = this.meta.methods;
     let { symbol } = this.meta.methods;
     let { name } = this.meta.methods;
     let id = document.getElementById("lookid").value;
+    
+    this.setStatus("Looking up a star ...)");    
+ 
+    let { lookUptokenIdToStarInfo } = this.meta.methods;   
     id = parseInt(id);
     let starName = await lookUptokenIdToStarInfo(id).call();
     let contract = await name().call();
