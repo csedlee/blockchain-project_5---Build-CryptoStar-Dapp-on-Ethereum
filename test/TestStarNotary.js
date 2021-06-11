@@ -1,6 +1,7 @@
-const StarNotary = artifacts.require("StarNotary");
+const StarNotary = artifacts.require("./StarNotary");
 
-var accts;
+let instance;
+let accts;
 var owner;
 
 contract('StarNotary', (accs) => {
