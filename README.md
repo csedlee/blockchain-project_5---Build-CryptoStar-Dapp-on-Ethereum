@@ -1,17 +1,19 @@
 
 # ERC-721 Token.
+```bash
 ERC-721 Token Name: "CoinStar"
 ERC-721 Token Symbol: "CAD"
 “Token Address” on the Rinkeby Network: "0x81E890Fe413cCaC1C1c01B0DD4A80B925D939BF8"
-
+```
 # Truffle & OpenZeppelin version used in the project.
+``bash
 truffle(develop)> version
 Truffle v5.3.8 (core: 5.3.8)
 openzeppelin/contracts@4.1.0
 Solidity v0.5.16 (solc-js)
 Node v10.19.0
 Web3.js v1.3.6
-
+```
 # ND1309 C2 Ethereum Smart Contracts, Tokens and Dapps - Project Starter 
 **PROJECT: Decentralized Star Notary Service Project** - For this project, you will create a DApp by adding functionality with your smart contract and deploy it on the public testnet.
 
